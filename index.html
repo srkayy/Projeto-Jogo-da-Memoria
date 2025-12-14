@@ -4,39 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo da Memória: Funções Orgânicas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
-    
+
+    <div class="bg-layer" aria-hidden="true">
+        <div class="molecule mol-1"></div>
+        <div class="molecule mol-2"></div>
+        <div class="molecule mol-3"></div>
+        <div class="molecule mol-4"></div>
+        <div class="molecule mol-5"></div>
+    </div>
+
+    <div class="overlay intro-overlay" id="intro-overlay">
+        <div class="glass-panel intro-content">
+            <div class="intro-badge"> Química Orgânica</div>
+            <h1 class="intro-title">Jogo da<br><span class="accent">Memória</span></h1>
+            <p class="intro-desc">Associe os grupos funcionais aos nomes das funções orgânicas. Escolha seu nível de desafio:</p>
+            <div class="difficulty-grid">
+                <button class="diff-btn active" data-difficulty="easy">
+                    <span class="diff-icon">🧪</span>
+                    <span class="diff-label">Fácil</span>
+                    <span class="diff-detail">8 pares · 3 min</span>
+                </button>
+                <button class="diff-btn" data-difficulty="medium">
+                    <span class="diff-icon">🔬</span>
+                    <span class="diff-label">Médio</span>
+                    <span class="diff-detail">10 pares · 2 min</span>
+                </button>
+                <button class="diff-btn" data-difficulty="hard">
+                    <span class="diff-icon">⚗️</span>
+                    <span class="diff-label">Difícil</span>
+                    <span class="diff-detail">12 pares · 90 seg</span>
+                </button>
+            </div>
+            <button id="start-button" class="primary-btn">INICIAR EXPERIMENTO</button>
+        </div>
+    </div>
+
     <header class="header">
-        <h1> Jogo da Memória: Funções Orgânicas </h1>
-        <p>Encontre os pares entre o grupo funcional e o nome da função orgânica.</p>
+        <div class="header-inner">
+            <div class="header-brand">
+                <span class="header-icon">⚗️</span>
+                <div>
+                    <h1>Funções Orgânicas</h1>
+                    <p>Jogo da Memória</p>
+                </div>
+            </div>
+            <div class="header-stats">
+                <div class="stat-pill" id="timer-pill">
+                    <span class="stat-icon">⏱</span>
+                    <span id="timer-display">--:--</span>
+                </div>
+                <div class="stat-pill">
+                    <span class="stat-icon">🎯</span>
+                    <span id="moves-count">0</span>
+                </div>
+                <div class="stat-pill">
+                    <span class="stat-icon">✅</span>
+                    <span id="matches-count">0/0</span>
+                </div>
+            </div>
+        </div>
+        <div id="timer-bar-container"><div id="timer-bar"></div></div>
     </header>
 
-    <div class="intro-overlay" id="intro-overlay">
-        <div class="intro-content">
-            <h2>Bem-vindo ao Jogo da Memória de Funções Orgânicas!</h2>
-            <p>O objetivo do jogo é ensinar a descrição do grupo funcional com o nome da Função Orgânica correspondente (Álcool, Cetona, Éster, etc.).</p>
-            <p>Aprenda de forma divertida e fixe os conceitos!</p>
-            <button id="start-button">COMEÇAR JOGO</button>
-        </div>
-    </div>
-    <div class="status-bar">
-        <span id="moves-count">Movimentos: 0</span>
-        <span id="matches-count">Pares Encontrados: 0</span>
-    </div>
+    <main class="game-container" id="game-board"></main>
 
-    <main class="game-container" id="game-board">
-    </main>
-
-    <div class="message-overlay" id="message-overlay">
-        <div class="message-content">
-            <h2 id="final-message">🎉 Parabéns!</h2>
+    <div class="overlay message-overlay" id="message-overlay" style="display:none;">
+        <div class="glass-panel message-content">
+            <div class="result-emoji" id="result-emoji">🎉</div>
+            <h2 id="final-message">Parabéns!</h2>
             <p id="final-moves"></p>
-            <button id="restart-button">JOGAR NOVAMENTE</button>
+            <div class="result-stats" id="result-stats"></div>
+            <div class="result-actions">
+                <button id="restart-button" class="primary-btn">JOGAR NOVAMENTE</button>
+                <button id="change-diff-button" class="secondary-btn">TROCAR NÍVEL</button>
+            </div>
         </div>
     </div>
-    
+
     <script src="script.js"></script>
 </body>
 </html>
