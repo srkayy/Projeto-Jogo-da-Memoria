@@ -5,6 +5,7 @@ const overlay = document.getElementById('message-overlay');
 const restartButton = document.getElementById('restart-button');
 const finalMessage = document.getElementById('final-message');
 const finalMoves = document.getElementById('final-moves');
+
 const introOverlay = document.getElementById('intro-overlay');
 const startButton = document.getElementById('start-button');
 
@@ -143,6 +144,7 @@ startButton.addEventListener('click', () => {
     introOverlay.style.display = 'none';
     createBoard(); 
 });
+
 
 function autoMatchAndEnd() {
     lockBoard = true; 
