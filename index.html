@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Memória: Funções Orgânicas</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    
+    <header class="header">
+        <h1>🧪🧬 Jogo da Memória: Funções Orgânicas ⚗️🔬</h1>
+        <p>Encontre os pares entre o grupo funcional e o nome da função orgânica.</p>
+    </header>
+
+    <div class="intro-overlay" id="intro-overlay">
+        <div class="intro-content">
+            <h2>Bem-vindo ao Jogo da Memória de Funções Orgânicas!</h2>
+            <p>O objetivo do jogo é ensinar a descrição do grupo funcional com o nome da Função Orgânica correspondente (Álcool, Cetona, Éster, etc.).</p>
+            <p>Aprenda de forma divertida e fixe os conceitos!</p>
+            <button id="start-button">COMEÇAR JOGO</button>
+        </div>
+    </div>
+    <div class="status-bar">
+        <span id="moves-count">Movimentos: 0</span>
+        <span id="matches-count">Pares Encontrados: 0</span>
+    </div>
+
+    <main class="game-container" id="game-board">
+    </main>
+
+    <div class="message-overlay" id="message-overlay">
+        <div class="message-content">
+            <h2 id="final-message">🎉 Parabéns!</h2>
+            <p id="final-moves"></p>
+            <button id="restart-button">JOGAR NOVAMENTE</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
