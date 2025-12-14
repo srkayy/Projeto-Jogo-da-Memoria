@@ -5,8 +5,6 @@ const overlay = document.getElementById('message-overlay');
 const restartButton = document.getElementById('restart-button');
 const finalMessage = document.getElementById('final-message');
 const finalMoves = document.getElementById('final-moves');
-
-// NOVOS SELETORES DE INÍCIO
 const introOverlay = document.getElementById('intro-overlay');
 const startButton = document.getElementById('start-button');
 
@@ -137,7 +135,6 @@ function endGame() {
     overlay.style.display = 'flex';
 }
 
-// LÓGICA DE INÍCIO E REINÍCIO
 restartButton.addEventListener('click', () => {
     createBoard();
 });
@@ -146,8 +143,6 @@ startButton.addEventListener('click', () => {
     introOverlay.style.display = 'none';
     createBoard(); 
 });
-
-// AQUI NÃO CHAMAMOS createBoard(); O modal intro fica por cima.
 
 function autoMatchAndEnd() {
     lockBoard = true; 
